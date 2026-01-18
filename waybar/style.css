@@ -1,0 +1,197 @@
+@import "/home/tanmayyy/.cache/wal/colors-waybar.css";
+
+/* General Waybar Styling */
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd", sans-serif;
+}
+
+#waybar {
+    background: transparent;
+    padding: 8px;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 4px 4px 0px 4px;
+}
+
+/* Workspace Buttons - Orange Slider Update */
+#workspaces button {
+    color: @color6;
+    background-color: alpha(@background, 0.75);
+    border: 2px solid transparent; /* The thickness of your border */
+    background-image: 
+        linear-gradient(alpha(@background, 0.80), alpha(@background, 0.80)), 
+        linear-gradient(45deg, @color3, @color1);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border-radius: 16px;
+    padding: 4px 12px;
+    margin: 2px 2px;
+    /* Smooth transition for the 'sliding' width effect */
+    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.68);
+}
+
+#workspaces button:hover {
+    background-color: alpha(@color4, 0.2);
+    color: @color4;
+}
+
+#workspaces button.active {
+    color: @background;
+    background: @color3; /* Vibrant Orange Slider */
+    border: 1px solid @color4;
+    min-width: 30px; /* Creates the expanded pill/slider look */
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background-color: @color1;
+    color: @color15;
+}
+
+/* All Modules Base Style */
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#custom-power,
+#custom-notification,
+#power-profiles-daemon {
+    background-color: alpha(@background, 0.60);
+    color: @color6;
+    border: 2px solid transparent; /* The thickness of your border */
+    background-image: 
+        linear-gradient(alpha(@background, 0.80), alpha(@background, 0.80)), 
+        linear-gradient(45deg, @color3, @color1);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border-radius: 20px;
+    padding: 6px 16px;
+    margin: 2px 2px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#backlight:hover,
+#network:hover,
+#pulseaudio:hover,
+#custom-power:hover,
+#custom-notification:hover,
+#power-profiles-daemon:hover {
+    background-color: @color0;
+    /* border: 1px solid @color5; */
+}
+
+/* Clock Module */
+#clock {
+    font-size: 14px;
+    padding: 6px 18px;
+    font-weight: 600;
+}
+
+/* Battery Module */
+#battery {
+    font-size: 14px;
+}
+
+#battery.charging {
+    color: @color6;
+    border-color: @color4;
+}
+
+#battery.warning {
+    color: @color3;
+    border-color: @color3;
+}
+
+#battery.critical {
+    color: @color3;
+    border-color: @color1;
+}
+
+/* CPU and Memory */
+#cpu,
+#memory {
+    font-size: 14px;
+}
+
+/* Temperature */
+#temperature {
+    font-size: 14px;
+}
+
+#temperature.critical {
+    color: @color1;
+    border-color: @color1;
+}
+
+/* Backlight */
+#backlight {
+    font-size: 14px;
+}
+
+/* Network */
+#network {
+    font-size: 14px;
+}
+
+#network.disconnected {
+    color: @color3;
+}
+
+/* Pulseaudio */
+#pulseaudio {
+    font-size: 14px;
+}
+
+#pulseaudio.muted {
+    color: @color6;
+}
+
+/* Custom Power Module */
+#custom-power {
+    font-size: 16px;
+    padding: 6px 14px;
+    color: @color1;
+    border-color: @color1;
+}
+
+#custom-power:hover {
+    background-color: @color1;
+    color: @background;
+}
+
+/* Tray */
+#tray {
+    padding: 6px 12px;
+}
+
+/* Tooltip */
+tooltip {
+    background-color: @background;
+    color: @color7;
+    border: 1px solid @color8;
+    border-radius: 12px;
+    padding: 8px 12px;
+}
+
+tooltip label {
+    color: @color7;
+}

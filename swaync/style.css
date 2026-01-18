@@ -1,0 +1,205 @@
+@import "/home/tanmayyy/.cache/wal/colors-waybar.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Acrylic Main Panel with Gradient Border */
+.control-center {
+    background: alpha(@background, 0.15);
+    border-radius: 17px;
+    margin: 10px;
+    padding: 10px;
+
+    /* Gradient Border Logic */
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: border-box; /* Changed to border-box for better alignment */
+    
+    background-image: 
+        linear-gradient(alpha(@background, 0.95), alpha(@background, 0.95)), /* Solid inner */
+        linear-gradient(45deg, @color3, @color1); /* High Contrast Orange & Green */
+}
+
+/* Media Player - Floating Glass Look */
+.widget-mpris {
+  background: alpha(@color0, 0.5);
+  padding: 12px;
+  margin: 15px;
+  border-radius: 18px;
+  border: 1px solid alpha(@color7, 0.1);
+}
+
+.widget-mpris-title {
+  color: @color15;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.widget-mpris-subtitle {
+  color: alpha(@color7, 0.7);
+}
+
+/* Header Title */
+.widget-title {
+  background: transparent;
+  color: @color15;
+  margin: 10px;
+}
+
+.widget-title button {
+  background: alpha(@color8, 0.15);
+  color: @color15;
+  border-radius: 12px;
+  padding: 8px 16px;
+  border: 1px solid alpha(@color7, 0.2);
+}
+
+.widget-title button:hover {
+  background: alpha(@color5, 0.4);
+  border: 1px solid @color5;
+}
+
+/* DND Toggle */
+.widget-dnd {
+  background: alpha(@color8, 0.1);
+  border-radius: 12px;
+  margin: 5px 15px;
+  padding: 10px 20px;
+  color: @color7;
+  border: 1px solid alpha(@color7, 0.1);
+}
+
+.widget-dnd > switch {
+  background: alpha(@color8, 0.3);
+  border: 1px solid alpha(@color7, 0.2);
+}
+
+.widget-dnd > switch:checked {
+  background: @color5;
+}
+
+/* Quick Settings Buttons - Large, Equal Spacing */
+.widget-buttons-grid {
+  padding: 15px;
+  margin: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 8px;
+  justify-items: center;
+}
+
+.widget-buttons-grid > button {
+    background: alpha(@color8, 0.15);
+    border-radius: 50%;
+    padding: 25px;
+    font-size: 28px;
+    color: @color7;
+    
+    /* Apply the Orange-Green border here too */
+    border: 2px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: border-box;
+    background-image: 
+        linear-gradient(alpha(@color0, 0.8), alpha(@color0, 0.8)), 
+        linear-gradient(45deg, @color3, @color1);
+    
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.widget-buttons-grid > button:hover {
+    background-image: 
+        linear-gradient(@color3, @color3), 
+        linear-gradient(45deg, @color3, @color1);
+    color: @background;
+    transform: scale(1.1);
+}
+
+.widget-buttons-grid > button:active {
+  transform: scale(0.95);
+}
+
+/* Sliders - Vibrant Green Fill */
+.widget-volume, .widget-backlight {
+  background: alpha(@color8, 0.1);
+  padding: 10px 20px;
+  margin: 8px 15px;
+  border-radius: 15px;
+  border: 1px solid alpha(@color7, 0.1);
+}
+
+.widget-volume label, .widget-backlight label {
+  font-size: 20px;
+  color: @color15;
+  margin-right: 12px;
+}
+
+.widget-volume scale, .widget-backlight scale {
+  color: @color7;
+}
+
+.widget-volume trough, .widget-backlight trough {
+  background: alpha(@color8, 0.3);
+  min-height: 8px;
+  border-radius: 8px;
+}
+
+.widget-volume highlight, .widget-backlight highlight {
+    background: @color3; /* Orange fill to match border */
+    border-radius: 8px;
+}
+
+.widget-volume slider, .widget-backlight slider {
+    background: @color15;
+    box-shadow: 0 0 10px alpha(@color3, 0.5);
+    border: 2px solid @color1; /* Green border on the slider knob */
+    border-radius: 50%;
+    min-width: 18px;
+    min-height: 18px;
+}
+
+/* Notifications - Acrylic Cards with More Noise */
+.notification {
+  background: alpha(@color8, 0.9);
+  border-radius: 16px;
+  margin: 10px;
+  border: 1px solid alpha(@color7, 0.1);
+}
+
+.notification:hover {
+  background: alpha(@color8, 0.2);
+  border: 1px solid alpha(@color5, 0.3);
+}
+
+.notification-content {
+  color: @color7;
+}
+
+.summary {
+  color: @color15;
+  font-weight: bold;
+}
+
+.body {
+  color: @color7;
+}
+
+/* Scrollbar */
+scrollbar {
+  background: transparent;
+  border-radius: 12px;
+}
+
+scrollbar slider {
+  background: alpha(@color7, 0.3);
+  border-radius: 12px;
+}
+
+scrollbar slider:hover {
+  background: alpha(@color7, 0.5);
+}

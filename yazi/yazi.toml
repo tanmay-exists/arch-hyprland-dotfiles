@@ -1,0 +1,32 @@
+[manager]
+show_hidden = true
+
+[opener]
+
+nvim = [
+    { run = '${EDITOR:-nvim} "$@"', block = true, for = "linux", desc = "Neovim" },
+]
+
+# Images
+edit = [
+	{ run = 'imv "$@"', block = true, for = "linux" },
+]
+
+# Videos
+play = [
+	{ run = 'mpv "$@"', orphan = true, for = "linux" },
+]
+
+# PDFs
+pdf = [
+	{ run = 'zathura "$@"', block = true, for = "linux" },
+]
+
+[open]
+rules = [
+  { name = "*.{py,js,ts,tsx,jsx,json,jsonc,lua,sh,md,toml,conf}", use = "nvim" },
+  { mime = "text/*", use = "nvim" },
+	{ mime = "image/*", use = "edit" },
+	{ mime = "video/*", use = "play" },
+	{ mime = "application/pdf", use = "pdf" },
+]

@@ -1,0 +1,93 @@
+@import "/home/tanmayyy/.cache/wal/colors-waybar.css";
+
+* {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    font-family: "JetBrainsMono Nerd Font";
+}
+
+window {
+    font-size: 14px;
+    border-radius: 20px;
+    
+    /* Stronger opacity for 'thick' acrylic look */
+    /* We use @background here to keep the blur dark and moody */
+    background-color: alpha(@background, 0.7); 
+    
+    /* Multi-color Warm Gradient Border */
+    /* Color1 (Green) -> Color3 (Yellow) -> Color4 (Orange) -> Color12 (Warm Red) */
+    border: 2px solid transparent;
+    background-image: linear-gradient(alpha(@background, 0.9), alpha(@background, 0.8)), 
+                      linear-gradient(135deg, @color1, @color3, @color4, @color12);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.6);
+}
+
+#outer-box {
+    margin: 10px;
+    padding: 10px;
+    background-color: transparent;
+}
+
+#inner-box {
+    margin: 5px;
+    background-color: transparent;
+}
+
+#input {
+    background: alpha(@color0, 0.6);
+    border: 1px solid alpha(@color7, 0.4);
+    border-radius: 12px;
+    margin: 10px 15px;
+    color: @color7;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+}
+
+#input:focus {
+    border: 1px solid @color3; /* Focus glow matches your warm yellow */
+    box-shadow: 0 0 15px alpha(@color3, 0.3);
+}
+
+#entry {
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 1px solid alpha(@color2, 0.3);
+    margin: 5px 10px;
+    background-color: transparent;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#entry:hover {
+    background-color: alpha(@color8, 0.2);
+    transform: translateX(5px);
+}
+
+#entry #text {
+    padding: 0px 0px 0px 20px;
+    font-weight: 500;
+    color: @color7;
+}
+
+#entry:selected {
+    /* Selection gradient from Orange to Red */
+    background: linear-gradient(90deg, alpha(@color4, 0.6) 0%, alpha(@color12, 0.5) 100%);
+    border: 1px solid alpha(@color6, 0.3);
+}
+
+#entry:selected #text {
+    font-weight: 700;
+    color: #ffffff; /* High contrast white for active selection */
+}
+
+#image {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#scroll {
+    margin: 5px;
+}
