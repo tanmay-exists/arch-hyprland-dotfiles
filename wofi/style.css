@@ -11,19 +11,17 @@ window {
     font-size: 14px;
     border-radius: 20px;
     
-    /* Stronger opacity for 'thick' acrylic look */
-    /* We use @background here to keep the blur dark and moody */
-    background-color: alpha(@background, 0.7); 
+    background-color: transparent; 
     
-    /* Multi-color Warm Gradient Border */
-    /* Color1 (Green) -> Color3 (Yellow) -> Color4 (Orange) -> Color12 (Warm Red) */
-    border: 2px solid transparent;
+    /* Your existing gradient logic */
+    border: 3px solid transparent;
     background-image: linear-gradient(alpha(@background, 0.9), alpha(@background, 0.8)), 
                       linear-gradient(135deg, @color1, @color3, @color4, @color12);
     background-origin: border-box;
     background-clip: padding-box, border-box;
     
-    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.6);
+    /* This helps clip the content to the border radius */
+    clip-path: inset(0 round 20px); 
 }
 
 #outer-box {
